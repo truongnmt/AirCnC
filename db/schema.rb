@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(version: 20171002061816) do
 
   create_table "reviews", force: :cascade do |t|
     t.text "comment"
-    t.integer "star"
+    t.integer "star", default: 1
     t.integer "room_id"
     t.integer "reservation_id"
     t.integer "guest_id"

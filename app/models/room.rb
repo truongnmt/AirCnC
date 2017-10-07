@@ -2,8 +2,8 @@ class Room < ApplicationRecord
   belongs_to :user
   has_many :photos
   has_many :reservations
-  has_many :guest_reviews, class_name: "GuestReview", foreign_key: "guest_id"
-  has_many :host_reviews, class_name: "HostReview", foreign_key: "host_id"
+
+  has_many :guest_reviews
 
   geocoded_by :address
   after_validation :geocode, if: :address_changed?

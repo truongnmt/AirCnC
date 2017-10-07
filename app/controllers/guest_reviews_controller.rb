@@ -11,7 +11,7 @@ class GuestReviewsController < ApplicationController
         host_id: guest_review_params[:host_id]).first
 
       if @has_reviewed.nil?
-        @guest_review = current_user.guest_review.create(guest_review_params)
+        @guest_review = current_user.guest_reviews.create(guest_review_params)
         flash[:success] = "Review created..."
       else
         flash[:success] = "You already reviewed this reservation"
