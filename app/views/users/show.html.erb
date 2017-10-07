@@ -24,6 +24,7 @@
       <%= @user.description %>
     </div>
     <h4>Listings (<%= @rooms.length %>)</h4><br>
+
     <div class="row">
       <% @rooms.each do |room| %>
         <div class="col-md-4">
@@ -38,5 +39,18 @@
         </div>
       <% end %>
     </div>
+    <br>
+
+    <h4>Reviews From Guests (<%= @guest_reviews.count %>)</h4>
+    <div class="row">
+      <%= render "reviews/guest_list" %>
+    </div>
+    <br>
+
+    <h4>Reviews From Hosts (<%= @guest_reviews.count %>)</h4>
+    <div class="row">
+      <%= render "reviews/host_list" %>
+    </div>
+    <br>
   </div>
 </div>
