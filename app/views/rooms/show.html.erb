@@ -125,6 +125,21 @@
       </div>
     <hr>
 
+    <!-- REVIEWS -->
+    <div class="row">
+      <div class="col-md-12">
+        <h3>
+          <%= pluralize(@guest_reviews.count, "Review") %>
+          <span id="average_rating"></span>
+        </h3>
+        <div class="container">
+          <div><%= render "reviews/guest_list" %></div>
+        </div>
+      </div>
+    </div>
+    <br>
+    <hr>
+
     <!-- GOOGLE MAP -->
     <div class="row">
       <div id="map" style="width: 100%; height: 400px"></div>
@@ -164,7 +179,7 @@
           <div class="col-md-4">
             <div class="panel panel-default">
               <div class="panel-heading preview">
-                <%= image_tag room.cover_photo(:standard) %>
+                <%= image_tag room.cover_photo(:thumbnail) %>
               </div>
               <div class="panel-body">
                 <%= link_to room.listing_name, room %> <br>
@@ -183,3 +198,11 @@
     <%= render 'reservations/form' %>
   </div>
 </div>
+
+<script>
+  $('#average_rating').raty({
+    path: '/assets',
+    readOnly: true,
+    score: <%= @room.average_rating %>
+  })
+</script>

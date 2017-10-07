@@ -15,7 +15,7 @@
         <% @rooms.each do |room| %>
           <div class="row">
             <div class="col-md-2">
-              <%= image_tag room.cover_photo(:standard) %>
+              <%= image_tag room.cover_photo(:thumbnail) %>
             </div>
             <div class="col-md-7">
               <h4><%= room.listing_name %></h4>
