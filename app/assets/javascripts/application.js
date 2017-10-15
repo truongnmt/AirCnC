@@ -14,5 +14,6 @@
 //= require bootstrap-sprockets
 //= require rails-ujs
 //= require jquery-ui/widgets/datepicker
+//= require jquery-ui/widgets/slider
 //= require toastr
 //= require_tree .
