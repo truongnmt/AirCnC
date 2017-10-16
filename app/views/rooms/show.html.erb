@@ -202,6 +202,10 @@
 <script>
   $('#average_rating').raty({
     path: '/assets',
+    <% path = image_url('star-on.png') %>
+    starOn: '<%= path.slice((path.index('assets/')+7)..(path.size)) %>',
+    <% path = image_url('star-off.png') %>
+    starOff: '<%= path.slice((path.index('assets/')+7)..(path.size)) %>',
     readOnly: true,
     score: <%= @room.average_rating %>
   })
