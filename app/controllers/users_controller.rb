@@ -10,7 +10,7 @@ class UsersController < ApplicationController
     @host_reviews = Review.where(type: "HostReview", host_id: @user.id)
   end
 
-  def updated_phone_number
+  def update_phone_number
     current_user.update_attributes(user_params)
     current_user.generate_pin
     current_user.send_pin
