@@ -22,8 +22,15 @@
               <div class="col-md-4 select">
                 <div class="form-group">
                   <label for="">Room Types</label>
-                  <%= f.select :home_type, [["Entire", "Entire"], ["Private", "Private"], ["Shared", "Shared"]],
+                  <%= f.select :room_type, [["Entire", "Entire"], ["Private", "Private"], ["Shared", "Shared"]],
                     id: "room_type", prompt: "Select ...", class: "form-control" %>
+                </div>
+              </div>
+
+              <div class="col-md-4 select">
+                <div class="form-group">
+                  <label for="">Booking Types</label>
+                  <%= f.select :instant, Room.instants.map {|key, value| [key.humanize, key]}, selected: 'Instant', prompt: "Select ...", class: "form-control" %>
                 </div>
               </div>
 
