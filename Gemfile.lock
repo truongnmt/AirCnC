@@ -88,6 +88,8 @@ GEM
     faraday (0.12.2)
       multipart-post (>= 1.2, < 3)
     ffi (1.9.18)
+    figaro (1.1.1)
+      thor (~> 0.14)
     geocoder (1.4.4)
     globalid (0.4.0)
       activesupport (>= 4.2.0)
@@ -227,6 +229,10 @@ GEM
     turbolinks (5.0.1)
       turbolinks-source (~> 5)
     turbolinks-source (5.0.3)
+    twilio-ruby (4.11.1)
+      builder (>= 2.1.2)
+      jwt (~> 1.0)
+      multi_json (>= 1.3.0)
     tzinfo (1.2.3)
       thread_safe (~> 0.1)
     uglifier (3.2.0)
@@ -258,6 +264,7 @@ DEPENDENCIES
   cloudinary
   coffee-rails (~> 4.2)
   devise (~> 4.2)
+  figaro
   geocoder (~> 1.4)
   jbuilder (~> 2.5)
   jquery-rails
@@ -276,9 +283,10 @@ DEPENDENCIES
   sqlite3
   toastr-rails (~> 1.0)
   turbolinks (~> 5)
+  twilio-ruby (~> 4.11.1)
   tzinfo-data
   uglifier (>= 1.3.0)
   web-console (>= 3.3.0)
 
 BUNDLED WITH
-   1.15.3
+   1.16.0

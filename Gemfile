@@ -23,6 +23,8 @@ gem 'sass-rails', '>= 3.2'
 gem 'toastr-rails', '~> 1.0'
 gem 'turbolinks', '~> 5'
 gem 'uglifier', '>= 1.3.0'
+gem 'figaro'
+gem 'twilio-ruby', '~> 4.11.1'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
