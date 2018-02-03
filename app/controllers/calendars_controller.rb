@@ -1,5 +1,6 @@
 class CalendarsController < ApplicationController
-  before action :authenticate_user!
+  before_action :authenticate_user!
+  include ApplicationHelper
 
   def host
     @rooms = current_user.rooms
@@ -10,13 +11,14 @@ class CalendarsController < ApplicationController
     if params[:room_id]
       @room = Room.find(params[:room_id])
       start_date = Date.parse(params[:start_date])
-      
+
       first_of_month = (start_date - 1.months).beginning_of_month
       end_of_month = (start_date + 1.months).beginning_of_month
 
-      @events = @room.reservations.join(:user)
+      @events = @room.reservations.joins(:user)
                       .select('reservations.*, users.fullname, users.image, users.email, users.uid')
                       .where('(start_date BETWEEN ? AND ?) AND status <> ?', first_of_month, end_of_month, 2)
+      @events.each{|e| e.image = avatar_url(e)}
     else
       @room = nil
       @events = []
