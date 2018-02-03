@@ -25,6 +25,8 @@ gem 'turbolinks', '~> 5'
 gem 'uglifier', '>= 1.3.0'
 gem 'figaro'
 gem 'twilio-ruby', '~> 4.11.1'
+gem 'fullcalendar-rails', '~> 3.4.0'
+gem 'momentjs-rails', '~> 2.17.1'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
