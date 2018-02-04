@@ -24,7 +24,7 @@ class CalendarsController < ApplicationController
 
       @events = @room.reservations.joins(:user)
                       .select('reservations.*, users.fullname, users.image, users.email, users.uid')
-                      .where('(start_date BETWEEN ? AND ?) AND reservations.status <> ?', first_of_month, end_of_month, 2)
+                      .where('(start_date BETWEEN ? AND ?) AND status <> ?', first_of_month, end_of_month, 2)
       @events.each{|e| e.image = avatar_url(e)}
     else
       @room = nil
