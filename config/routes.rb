@@ -12,6 +12,7 @@ Rails.application.routes.draw do
       patch '/update_phone_number' => 'users#update_phone_number'
     end
   end
+
   resources :rooms, except: [:edit] do
     member do
       get 'listing'
@@ -25,6 +26,7 @@ Rails.application.routes.draw do
     end
     resources :photos, only: [:create, :destroy]
     resources :reservations, only: [:create]
+    resources :calendars
   end
 
   resources :guest_reviews, only: [:create, :destroy]
